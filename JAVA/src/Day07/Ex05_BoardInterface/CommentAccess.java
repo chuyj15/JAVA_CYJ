@@ -36,7 +36,6 @@ public class CommentAccess extends JDBConnection implements DataService {
 		return commentList;
 	}
 	
-	
 	// 특정 글에 해당하는 댓글 데이터 목록 조회 (메소드 오버로딩)
 	public Text[] selectList(int boardNo) {
 		int max = Main.max;
