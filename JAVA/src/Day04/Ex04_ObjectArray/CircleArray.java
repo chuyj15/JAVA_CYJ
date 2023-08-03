@@ -15,7 +15,7 @@ class Circle{
 	//메소드
 	public double getArea() {
 		//원의 넓이 = 원주율*(반지름^2)
-		return Math.PI *Math.pow(radius, 2); //pow : 0제곱을 해줌. 
+		return Math.PI *Math.pow(radius, 2); //pow : x제곱을 해줌. 
 	}
 }
 

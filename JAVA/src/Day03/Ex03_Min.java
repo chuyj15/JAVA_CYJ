@@ -12,7 +12,7 @@ public class Ex03_Min {
 		//90 60 70 100 55
 		//(출력 예시)
 		//최솟값: 55
-		
+		//수정합니다.
 		Scanner sc = new Scanner(System.in);
 		int N= sc.nextInt();
 		int arr[] = new int[N];

@@ -9,7 +9,7 @@ package Day05.Ex01_StaticMember;
 	 */
 public class SingleTon {
 	//static으로 유일한 객체를 생성
-	private static SingleTon instance = new SingleTon();
+	private  static SingleTon instance = new SingleTon();//멤버를 생성한 듯
 	//생성자를 private로 정의
 	private SingleTon() {
 		
