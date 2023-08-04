@@ -3,7 +3,7 @@ package JavaMission._11;
 public class Circle {
 	double radius;
 	
-	//생성자
+	//생성자/
 	public Circle(double radius) {
 		this.radius = radius;
 	}

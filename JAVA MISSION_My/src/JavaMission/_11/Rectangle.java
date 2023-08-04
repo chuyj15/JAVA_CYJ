@@ -1,5 +1,5 @@
 package JavaMission._11;
-
+//
 public class Rectangle {
 	double width=0;
 	double height=0;

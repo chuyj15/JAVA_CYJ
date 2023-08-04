@@ -1,4 +1,4 @@
-package _06;
+package JavaMission;
 
 import java.util.Scanner;
 

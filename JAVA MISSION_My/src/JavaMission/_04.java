@@ -1,7 +1,6 @@
-package _06;
+package JavaMission;
 
 import java.util.Scanner;
-
 /*
  *정수 하나를 입력 받아, 정수형 변수 N에 초기화시키고, 예시 <출력>과 같이 “*” 기호를 출력하는 프로그램을 작성하시오.
  * 1. n을 입력받기.
@@ -13,12 +12,16 @@ public class _04 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
-		String star = "*";
+		//String star = "*";
 		
 		for (int i = 0; i < N; i++) {
-			String start = star;
-			star += 
-			System.out.println(star);
+			for (int j = N; j > i+1; j--) {
+				System.out.print(" ");
+			}
+			for (int j = 0; j < 2*i+1; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
 		}
 		
 		
