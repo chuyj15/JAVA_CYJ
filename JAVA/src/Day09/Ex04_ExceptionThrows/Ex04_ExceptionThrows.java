@@ -26,5 +26,4 @@ public class Ex04_ExceptionThrows {
 		System.out.println(input);
 	}
 	
-	
 }

@@ -11,7 +11,7 @@ public class NumberFormat {
 		String numberString = "10";
 		String numberAndString = "a10";
 		
-		//Integer.parseInt("문자열숫자")
+		//Integer.parseInt("문자열숫자") //parse: 분석하다
 		// : 문자열 숫자를 int타입의 숫자로 변환하는 메소드
 		int num1 = Integer.parseInt(numberString);		//변환가능
 		

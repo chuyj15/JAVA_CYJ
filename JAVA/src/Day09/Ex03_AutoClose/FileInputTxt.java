@@ -35,7 +35,8 @@ public class FileInputTxt {
 		} catch (IOException e) {
 			e.printStackTrace();//예외 발생 원인을 찾아 단계별로 예외메세지를 출력
 		} finally {
-			if ( fis !=null ) {
+			if ( fis !=null ) {//질문) if 문은 왜 써준거지?
+				//try문으로 들어왔을 때 22행이 실행이 안되어서 null인 경우가 있음. 이럴 때 close를 해줄 필요가 없기 때문에 if문이 들어간거임. 
 				try {
 					fis.close();
 				} catch (IOException e) {

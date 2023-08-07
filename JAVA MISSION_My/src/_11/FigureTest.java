@@ -1,4 +1,4 @@
-package JavaMission._11;
+package _11;
 /*
  아래의 주어진 코드를 실행 시켰을 때, 출력 예시와 같은 결과가 나오도록 
  [Triangle.java, Rectangle.java, Circle.java, Trapezoid.java] 클래스를 정의하시오./

@@ -25,8 +25,8 @@ public class InputMisMatch {
 				menuNo = sc.nextInt(); 	//예외발생 가능성 있는 문장
 			} catch (InputMismatchException e) {
 				//숫자를 입력하지 않았으면 , 다시 반복해서 입력하도록...
-				sc.next(); //입력 스트림에 남아있는 (엔터) 비움
 				System.err.println("(0~4) 사이의 정수를 입력해주세요.");
+				sc.next(); //입력 스트림에 남아있는 (엔터) 비움
 				continue;
 			}
 

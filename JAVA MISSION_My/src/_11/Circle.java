@@ -1,4 +1,4 @@
-package JavaMission._11;
+package _11;
 
 public class Circle {
 	double radius;

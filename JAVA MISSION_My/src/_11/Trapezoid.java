@@ -1,4 +1,4 @@
-package JavaMission._11;
+package _11;
 //
 public class Trapezoid {
 	double a, b, height;

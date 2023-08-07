@@ -1,4 +1,4 @@
-package JavaMission._11;
+package _11;
 //
 public class Rectangle {
 	double width=0;
