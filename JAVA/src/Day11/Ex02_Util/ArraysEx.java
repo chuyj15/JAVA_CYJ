@@ -72,7 +72,10 @@ public class ArraysEx {
 		//: 배열을 시작index부터 끝index까지 요소를 복사하여 배열로 반환
 //		int copyRange[] = Arrays.copyOfRange(arr, 2, 4);	//int[]배열을 받아와야하는데 arr가 Integer로 되어있음. 
 		//질문) 저번에 Integer랑 int랑 자유롭게 사용가능하다고 했는데 왜 이번에는 안되는거지..?
-		
+		// Integer = int	  (O)
+		// int = Integer	  (O)
+		// int[] = Integer[]  (X)
+		// Integer[] = int[]  (X)
 		int copyRange[] = Arrays.copyOfRange(random,11, 21);	//11~20
 		for (int i = 0; i < copyRange.length; i++) {
 			System.out.print(copyRange[i]+" ");
