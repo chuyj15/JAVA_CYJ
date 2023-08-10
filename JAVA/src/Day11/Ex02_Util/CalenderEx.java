@@ -3,6 +3,7 @@ package Day11.Ex02_Util;
 import java.util.Calendar;
 
 public class CalenderEx {
+		//메소드
 		public static void printCalendar(String msg, Calendar cal) {
 			int year = cal.get(Calendar.YEAR);
 			//위에를 int year = cal.get(Calendar.1); 로 써도 됨.
