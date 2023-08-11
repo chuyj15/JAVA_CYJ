@@ -51,6 +51,7 @@ public class User implements Comparator<User>{
 	public int compare(User o1, User o2) {
 		// 정렬 기준 1 : 나이순 - 오름차순
 		// 정렬 기준 2 : 이름순 - 오름차순
+		// * 반대로 내림차순으로 정렬하려면, 반환값에 (-)를 붙여준다. 
 		
 		// o1의 나이가 o2의 나이보다 클 때, 양수
 		
@@ -73,7 +74,7 @@ public class User implements Comparator<User>{
 //		return result1;
 	}
 	
-	
+	//if else문을 안 쓴 이유: 어차피 맨 처음에 걸리면 return으로 ifelse를 안 가기 때문에.
 }
 
 
