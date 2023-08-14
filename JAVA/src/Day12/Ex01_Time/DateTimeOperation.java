@@ -23,13 +23,5 @@ public class DateTimeOperation {
 		
 		System.out.println("변경시간: "+targetTime);
 		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 }

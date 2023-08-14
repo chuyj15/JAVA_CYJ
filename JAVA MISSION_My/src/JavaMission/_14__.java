@@ -17,7 +17,15 @@ public class _14__ {
 			
 			for (int j = 0; j <6; j++) {
 				Integer temp = (int) (Math.random()*45+1);
-				//중복 제거
+				//중복 제거 방법(1)
+//				for (Integer b : lottoList) {
+//					if (b == temp) {
+//						lottoList.remove(temp);
+//						j--;
+//					}
+//				}
+				//왜 foreach문으로 했을 때는 ConcurrentModificationException 에러가 나나요??
+				//중복 제거 방법(2)
 				for (int k = 0; k < args.length; k++) {
 					if (lottoList.get(k)==temp) {
 						lottoList.remove(temp);
