@@ -15,31 +15,6 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 
-class BigArrayList {
-	int a = 65;
-	String b= "";
-	ArrayList<ArrayList<Integer>> bigArrayList = new ArrayList<ArrayList<Integer>>();
-	
-	public int getA() {
-		return a;
-	}
-	public void setA(int i) {
-		this.a = a+i;
-	}
-	public String getB() {
-		return b;
-	}
-	public void setB(String b) {
-		this.b = b;
-	}
-	@Override
-	public String toString() {
-		return "BigArrayList [a=" + a + ", b=" + b + ", bigArrayList=" + bigArrayList + "]";
-	}
-	
-	
-	
-}
 
 public class _15 {
 	static Scanner sc = new Scanner(System.in);
@@ -121,7 +96,7 @@ public class _15 {
 	}
 	
 	//당첨 번호, 보너스 번호 
-	public static void bonus() {
+	public static ArrayList<Integer> bonus() {
 		ArrayList<Integer> bonu = auto();
 		System.out.print("당첨 번호 : ");
 		printArrayList(bonu);
@@ -132,30 +107,38 @@ public class _15 {
 			} while (bonu.contains(bon));
 		System.out.println("보너스 번호: "+bon);
 		
+		bonu.add(bon);
+		return bonu;
 	}
 	
 	
 	public static void main(String[] args) {
-		BigArrayList bigAL = new BigArrayList();
+		ArrayList<ArrayList<Integer>> bigAL = new ArrayList<>();
+		ArrayList<Integer> abc = new ArrayList<Integer> ();
+		int a = 65;
+		ArrayList<String> automanu = new ArrayList<String> ();
+		
 		System.out.print("몇 게임?");
 		int n = sc.nextInt();
 		for (int i = 1; i < n+1; i++) {
-			System.out.print("["+i+" 게임] (1.자동 / 2.수동)");
+			System.out.print("["+i+" 게임] (1.자동 / 2.수동) : ");
 			int what = sc.nextInt();
 			switch (what) {
 			case 1:
 				ArrayList<Integer> d = auto();
-				bigAL.setA(1);
-				bigAL.setB("자동");
-				bigAL.bigArrayList.add(d);
+				abc.add(a);
+				a += 1;
+				automanu.add("자동");
+				bigAL.add(d);
 				printArrayList(d);
 				break;
 			case 2:
 				//여기에 manual();을 쓰면 한번 더돌아. 메뉴얼이.. 그래서 저 밑에 한 줄로 충분함..대박...
 				ArrayList<Integer> e = manual();
-				bigAL.setA(1);
-				bigAL.setB("수동");
-				bigAL.bigArrayList.add(e);
+				abc.add(a);
+				a += 1;
+				automanu.add("수동");
+				bigAL.add(e);
 				printArrayList(e);
 				break;
 			default:
@@ -168,19 +151,74 @@ public class _15 {
 		System.out.println("지급기한\t: "+ lim());
 		System.out.println("---------------------------");
 		//
-		System.out.println(bigAL);
+			//ArrayList<Integer>를 인덱스별로 for문을 씀
+			for (int i = 0; i < bigAL.size(); i++) {
+				System.out.print(""+ (char)(int) abc.get(i) +" ");
+				System.out.print(automanu.get(i));
+				ArrayList<Integer> f = bigAL.get(i);
+				//ArrayList<Integer> 하나에 대한 프린트
+				for (Integer integer : f) {
+					DecimalFormat df = new DecimalFormat("00");
+					String intee = df.format(integer);
+					System.out.print(" "+intee+" ");
+				}
+				System.out.println();
+			}
 			
 		
 		System.out.println("---------------------------");
 		DecimalFormat decimalFormat = new DecimalFormat("#,###");
         String formattedNumber = decimalFormat.format(n*1000);
-		System.out.println("금액\t\t\t\t  \u20A9"+ formattedNumber);
+		System.out.println("금액\t\t\t  \u20A9"+ formattedNumber);
 		System.out.println("#########################################");
 		
-		bonus() ;
+		ArrayList<Integer> bb = bonus() ;
 		
 		System.out.println("#################### 당첨 결과 ####################");
-		//
+		
+		//bb랑 bigAL의 요소들이랑 중복되는 게 5개 이상 있으면 당첨이고 아니면 낙첨임. 
+		
+		ArrayList<Integer> 중복갯수 = new ArrayList<>();
+		ArrayList<String> 당첨낙첨 = new ArrayList<>();
+		//k: 가장 큰 bigAL의 인덱스
+		for (int k = 0; k < bigAL.size(); k++) {
+			ArrayList<Integer> f = bigAL.get(k);
+			//j: bigAL의 요소 f의 인티저배열의 인덱스
+			for (int j = 0; j < 6; j++) {
+					//i : 보너스 7개의 인덱스
+				int t=1;
+				for (int i = 0; i < 7; i++) {
+					if (f.get(j) == bb.get(i)) {
+						중복갯수.add(k, t++);
+					}  else {
+						중복갯수.add(k, 0);
+					}
+				}
+			}
+			if (중복갯수.get(k) ==5 || 중복갯수.get(k) ==6) {
+				당첨낙첨.add("(당첨)");
+			} else {
+				당첨낙첨.add("(낙첨)");
+			}
+		}
+		
+		
+		//ArrayList<Integer>를 인덱스별로 for문을 씀
+		for (int i = 0; i < bigAL.size(); i++) {
+			System.out.print(""+ (char)(int) abc.get(i) +" ");
+			System.out.print(automanu.get(i));
+			ArrayList<Integer> f = bigAL.get(i);
+			//ArrayList<Integer> 하나에 대한 프린트
+			for (Integer integer : f) {
+				DecimalFormat df = new DecimalFormat("00");
+				String intee = df.format(integer);
+				System.out.print(" "+intee+" ");
+			}
+			System.out.println(당첨낙첨.get(i));
+		}
+		
+		
+		
 		
 		System.out.println("#################################################");
 	}
