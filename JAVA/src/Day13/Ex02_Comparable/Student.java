@@ -33,6 +33,11 @@ public class Student implements Comparable<Student> {
 	}
 
 	@Override
+	public String toString() {
+		return "Student [name=" + name + ", age=" + age + "]";
+	}
+
+	@Override
 	public int compareTo(Student o) {
 		// 학생을 이름순으로 정렬 (오름차순)
 		String thisName = this.getName();		// 해당객체 이름

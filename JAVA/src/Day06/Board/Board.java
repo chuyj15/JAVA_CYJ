@@ -12,9 +12,11 @@ public class Board {
 	private Date updDate;
 	
 	//생성자
+	//생성자에는 boardNo가 없네??
 	public Board() {
 		this("제목없음", "글쓴이없음", "내용없음");
 	}
+	//여기 생성자에도 boardNo는 없고, Date도 매개변수로 안넣어주네. 
 	public Board(String title, String writer, String content) {
 		this.title = title;
 		this.writer = writer;

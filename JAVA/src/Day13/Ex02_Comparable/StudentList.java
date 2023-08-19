@@ -36,6 +36,9 @@ public class StudentList {
 			System.out.println(student.name + " : " + student.age);
 		}
 		
+		for (Student student : studentList) {
+			System.out.println(student);
+		}
 	}
 
 }

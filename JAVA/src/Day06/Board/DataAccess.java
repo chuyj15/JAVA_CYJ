@@ -8,18 +8,19 @@ public class DataAccess extends JDBConnection {
 	public Board[] selectList() {
 		int max = Main.max;
 		Board[] boardList = new Board[max];
-		//SQL 
+		//SQL -데이터베이스에 명령을 보낼 때는  sql언어를 이용해야 함
 		String sql = " SELECT * "           //쿼리
 				  + " FROM board ";
 		try {
-			stmt = con.createStatement();  //쿼리 실행 객체 생성
+			//데이터베이스에 요청보내는 작업
+			stmt = con.createStatement();  //쿼리 실행 객체 생성 (명령어를 실행시켜주는 객체)
 			rs = stmt.executeQuery(sql); //쿼리 실행 - 결과--> rs(ResultSet)
 			
 			int i=0;
 			//조회 결과를 배열에 추가
-			while( rs.next() ) {
-				Board board = new Board();
+			while( rs.next() ) { //다음행으로 넘어감
 				//결과 데이터 가져오기
+				Board board = new Board();
 				//rs.getXXX("칼럼명") --> 해당 칼럼의 데이터를 가져온다.
 				board.setBoardNo( rs.getInt("board_no") );
 				board.setTitle( rs.getString("title") );
@@ -42,10 +43,11 @@ public class DataAccess extends JDBConnection {
 					+" FROM board "
 					+" WHERE board_no = ? ";
 		try {
-			psmt = con.prepareStatement(sql);    //쿼리 실행 객체 생성
+			psmt = con.prepareStatement(sql);    //쿼리 실행 객체 생성 //객체만 생성해준거고
 			// psmt.setXXX( 순서번호, 매핑할 값 );
+			//순서번호: ?가 여러개일 때 ?가 몇번째인지
 			psmt.setInt(1, boardNo);			//?(1)<---boardNo(글번호)
-			rs = psmt.executeQuery();			//쿼리 실행
+			rs = psmt.executeQuery();			//쿼리 실행 //실행은 이쪽에서 하는거임!!!
 			
 			//조회결과 가져오기
 			if ( rs.next() ) {
@@ -129,6 +131,3 @@ public class DataAccess extends JDBConnection {
 		return result;
 	}
 }
-
-
-

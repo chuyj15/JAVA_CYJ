@@ -76,11 +76,3 @@ public class User implements Comparator<User>{
 	
 	//if else문을 안 쓴 이유: 어차피 맨 처음에 걸리면 return으로 ifelse를 안 가기 때문에.
 }
-
-
-
-
-
-
-
-
