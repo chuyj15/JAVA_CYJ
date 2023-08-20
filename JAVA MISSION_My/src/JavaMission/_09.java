@@ -1,7 +1,5 @@
 package JavaMission;
-
 import java.util.Scanner;
-
 public class _09 {
 	// 10반
 	// 20명
@@ -12,15 +10,12 @@ public class _09 {
 	static double[][][] classStudentData = new double[10][20][2];
 	// 반등수, 전교등수
 	static int[][][] classStudentRank = new int[10][20][2];
-	
 	// 과목별 반등수, 전교등수
 	static int[][][][] subjectStudentRank = new int[10][20][6][2];
 	
-	
 	// 학생이름
 	static String[][] classStudentName = new String[10][20];
-	
-	// 학생수
+	// 학생수 
 	static int[] classCount = new int[10];
 	// 반별 총점
 	static int[][] classTotalScore = new int[10][6+1];
@@ -43,6 +38,8 @@ public class _09 {
 	public static int inputNo() {
 		int inputNo = 0;
 		System.out.print(">> 입력 : ");
+		//sc.hasNextInt() : 입력받은 값이 숫자인 경우 true 반환
+		//입력받은 값이 숫자가 아닌 경우 false 반환
 		while(!sc.hasNextInt()) {
 			System.err.println("숫자만 입력할 수 있습니다.");
 			sc.next();
@@ -84,7 +81,7 @@ public class _09 {
 			if( inputNo == null )
 				sc.next();
 			inputNo = null;
-			System.out.print(msg);
+			System.out.print(msg);  
 		}
 		if( inputNo >= start && inputNo <= end ) return inputNo;
 		inputNo = sc.nextInt();
@@ -125,7 +122,7 @@ public class _09 {
 				case 1:
 						inputAll(classNo);
 						break;
-				case 2:
+				case 2: 
 						System.out.print(">> 학생 번호(1~20) : ");
 						studentNo = sc.nextInt();
 						inputStudent(classNo, studentNo);
@@ -209,7 +206,6 @@ public class _09 {
 		
 		// 등수 계산
 		calcRank(classNo);
-			
 		
 		// 반별 합계/평균 계산
 		calcClassTotal(classNo);
@@ -316,7 +312,7 @@ public class _09 {
 				case 1:
 						subjectListAll(subjectNo);
 						break;
-				case 2:
+				case 2: 
 						subjectList(subjectNo);
 						break;
 				default:
@@ -420,7 +416,7 @@ public class _09 {
 	}
 	
 	/**
-	 * 조회 탭 출력 (전체)
+	 * 조회 탭 출력 (전체) 
 	 */
 	public static void titleTab() {
 		for (int i = 0; i < subjects.length; i++) {
@@ -465,54 +461,20 @@ public class _09 {
 	 * @param classNo
 	 */
 	public static void calcRank(int classNo) {
+		
 		// 반 등수 계산
-		for (int i = 0; i < classStudentData[classNo-1].length; i++) {
-			int cnt =1;
-			for (int j = 0; j < classStudentData[classNo-1].length; j++) {
-				if(classStudentData[classNo-1][i][0]<classStudentData[classNo-1][j][0]) {
-					cnt+=1;
-					
-				}
-			}
-			classStudentRank[classNo-1][i][0]= cnt;
-			
-		}
+		
 		// 반 등수 계산 (끝)
 		
 		// 과목별 반 등수 계산
-		for (int i = 0; i < classStudentScore[classNo-1].length; i++) {
-			int cnt = 1;
-			for (int j = 0; j < classStudentScore[classNo-1][i].length; j++) {
-				for (int l = 0; l < classStudentScore[classNo-1].length; l++) {
-				if(classStudentScore[classNo-1][i][j]<classStudentScore[classNo-1][l][j]) {
-					cnt+=1;
-					}
-					
-				}
-				subjectStudentRank[classNo-1][i][j][0]= cnt;
-			}
-		}
+		
 		// 과목별 반 등수 계산 (끝)
 		
 		
-		
-//		인덱스 에러. 10을 넘아가는 i or j , k , l 이있음
-		
 		// 전교 등수 계산
-		for (int i = 0; i < classStudentData[classNo-1].length; i++) {
-			int cnt =1;
-			for (int j = 0; j < classStudentData[classNo-1][i].length; j++) {
-				for (int k = 0; k < classStudentData.length; k++) {
-					for (int l = 0; l < classStudentData[k].length; l++) {
-						if(classStudentData[classNo-1][j][0]<classStudentData[k][l][0]) {
-							cnt+=1;
-					}
-				}
-				}
-				classStudentRank[classNo-1][j][1]= cnt;
-			}
-		}
-		// 전교생 :
+		
+		
+		// 전교생 :  
 		// [학생수][0] : 총점
 		// [학생수][1] : 등수
 		
@@ -520,26 +482,10 @@ public class _09 {
 		
 		
 		// 과목별 전교 등수 계산
-		for (int i = 0; i < classStudentScore[classNo-1].length; i++) {
-			int cnt = 1;
-			for (int j = 0; j < classStudentScore[classNo-1][i].length; j++) {
-					for (int l = 0; l < classStudentScore.length; l++) {
-						for (int m = 0; m < classStudentScore[l].length; m++) {
-							if(classStudentScore[classNo-1][i][j]<classStudentScore[l][m][j]) {
-								cnt+=1;
-							
-						}
-						
-					}
-					}
-					
-					subjectStudentRank[classNo-1][i][j][1]= cnt;
-				}
-			}
-		}
+		
 		// 과목별 전교 등수 계산 (끝)
 		
-	
+	}
 	
 	/**
 	 * (반별) 총점, 평균 계산
@@ -552,7 +498,6 @@ public class _09 {
 				classTotalScore[classNo-1][j] += classStudentScore[classNo-1][i][j];
 			}
 		}
-		
 		
 		// 반 전체 총점
 	

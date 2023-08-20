@@ -55,6 +55,7 @@ public class StreamArrayList {
 		list.stream().map( p -> p.name ).forEach( n -> System.out.print(n + " ") );
 		System.out.println();
 		
+		
 		list.stream().map( p -> p.age ).forEach( a -> System.out.print(a + " ") );
 		System.out.println();
 		
@@ -63,6 +64,11 @@ public class StreamArrayList {
 		list.stream().filter( p -> p.name.length() >= 3 ).forEach( p -> System.out.print(p.name + " ") );
 		System.out.println();
 		
+		/*정리
+		 * <String> <Intger> 같은 형태는 바로바로 비교가 가능하지만 <Person>과 같은 클래스는 바로바로 비교가 불가능함. 
+		 * 이 때 sorted() 안에 매개변수로 사용 하는 것:
+		 *  Comparator.comparing(람다식 or 메소드 레퍼런스)
+		 */
 		
 		// 정렬
 		// - 메소드 레퍼런스 (::)
@@ -74,7 +80,8 @@ public class StreamArrayList {
 		// list.stream().sorted( Comparator.comparing( p -> p.getName() ) )			// 람다식
 		list.stream().sorted( Comparator.comparing( Person::getName ) )				// 메소드 레퍼런스
 					 .forEach( p -> System.out.println(p) );
-		
+		list.stream().sorted( Comparator.comparing( Person::getName ) )				// 메소드 레퍼런스
+		 .forEach( p -> System.out.println(p) );
 		System.out.println();
 		
 		// 나이 순으로 정렬 - 오름차순

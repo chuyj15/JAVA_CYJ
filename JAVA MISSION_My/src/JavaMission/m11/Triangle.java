@@ -1,17 +1,16 @@
-package _11;
+package JavaMission.m11;
 //
-public class Rectangle {
+public class Triangle {
 	double width=0;
 	double height=0;
 	
 	//생성자
-	public Rectangle(double width, double height) {
+	public Triangle(double width, double height) {
 		this.width = width;
 		this.height = height;
 	}
 	
 	public double getArea() {
-		return width*height;
+		return (width*height)/2;
 	}
-	
 }

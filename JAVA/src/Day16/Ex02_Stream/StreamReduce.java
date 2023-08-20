@@ -39,18 +39,27 @@ public class StreamReduce {
 		numList.add(4);
 		numList.add(5);
 		int result = numList.stream().reduce(0, (sum, item) -> sum + item);
+		//맨처음에 sum=0이고(초기화) item은 내부요소 하나하나를 가져옴. 
+		//sum은 누적변수, item은 현재요소가 됨.
+		//sum+item하게되면 이게 또 sum에 대입되는 구조임.
 		System.out.println("result : " + result);
+		//결과)  result : 15
 		
+		//첫번째 요소 가져오는 것: .findFirst() / 반환타입은 Optional<>
 		Optional<Integer> firstEven = numList.stream().filter( n -> n % 2 == 0 ).findFirst();
 		
 		if( firstEven.isPresent() ) {
+			//isPresent() : 존재여부
 			System.out.println("첫번째 짝수 : " + firstEven.get() );
 		} else {
 			System.out.println("짝수가 없습니다.");
 		}
+		// 결과) 첫번째 짝수 : 2
 		
+		//위에꺼를 더 줄이면 아래가 됨. 
 		// 첫번재 짝수를 찾아서, 존재하면 출력하시오.
 		numList.stream().filter( n -> n % 2 == 0 ).findFirst().ifPresent( n -> System.out.print(n));
+		//결과) 2
 	}
 
 }
