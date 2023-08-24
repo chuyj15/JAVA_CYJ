@@ -1,4 +1,4 @@
-package Day06.Board;
+package Day06.Board.copy;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

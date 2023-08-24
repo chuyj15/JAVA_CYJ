@@ -7,9 +7,10 @@ public class MathEx {
 		System.out.println(Math.PI);			//3.141592653589793
 		System.out.println(Math.ceil(3.125));	//올림: 해당 수보다 큰 정수 중 가장 작은 수
 		System.out.println(Math.floor(3.125));	//내림: 해당 수보다 작은 정수 중 가장 큰 수
-		System.out.println(Math.sqrt(9));	//제곱근(루트)
+		System.out.println(Math.sqrt(9));	//제제곱근(루트)
 		System.out.println(Math.exp(2));	//e의 2승
 		System.out.println(Math.round(3.14));	//반올림
+		
 		
 		System.out.println("------------------");
 		

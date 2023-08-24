@@ -10,7 +10,7 @@ public class Student {
 	int age;
 	String stdNo;
 	String major;
-	
+	//
 	//생성자
 	// - 기본 생성자
 	public Student() {

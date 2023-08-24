@@ -1,6 +1,5 @@
-package Day06.Board;
+package Day06.Board.copy;
 
-import java.util.Date;
 
 public class Board {
 	private int boardNo;
@@ -8,8 +7,8 @@ public class Board {
 	private String writer;
 	private String content;
 	//Date : 날짜/시간을 다루는 클래스
-	private Date regDate;
-	private Date updDate;
+	private String regDate;
+	private String updDate;
 	
 	//생성자
 	//생성자에는 boardNo가 없네??
@@ -20,9 +19,17 @@ public class Board {
 	public Board(String title, String writer, String content) {
 		this.title = title;
 		this.writer = writer;
-		this.content = content;
+		this.content = content;		
 	}
-
+	public Board(String title, String writer, String content, String regDate, String updDate) {
+		this.title = title;
+		this.writer = writer;
+		this.content = content;		
+		this.regDate = regDate;
+		this.updDate = updDate;
+	}
+	
+	
 	//getter, setter
 	public int getBoardNo() {
 		return boardNo;
@@ -48,16 +55,16 @@ public class Board {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getRegDate() {
+	public String getRegDate() {
 		return regDate;
 	}
-	public void setRegDate(Date regDate) {
+	public void setRegDate(String regDate) {
 		this.regDate = regDate;
 	}
-	public Date getUpdDate() {
+	public String getUpdDate() {
 		return updDate;
 	}
-	public void setUpdDate(Date updDate) {
+	public void setUpdDate(String updDate) {
 		this.updDate = updDate;
 	}
 	//toString
