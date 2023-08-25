@@ -21,7 +21,6 @@ public class BubbleSorting {
 			BubbleSorting[i] = sc.nextInt();
 		}
 		for (int i = 0; i < BubbleSorting.length; i++) {
-			System.out.println(BubbleSorting[i]); //값을 배열에 넣음
 		}
 		
 		for (int i = 0; i < BubbleSorting.length-1; i++) {
@@ -39,6 +38,8 @@ public class BubbleSorting {
 		for (int i = 0; i < BubbleSorting.length; i++) {
 			System.out.println(BubbleSorting[i]);
 		}
+		
+		sc.close();
 	}
 	
 }
